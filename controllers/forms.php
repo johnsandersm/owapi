@@ -1,16 +1,16 @@
 <?php
 
-class SKELETON_CTRL_Forms extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Forms extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
         
-        OW::getDocument()->setTitle($language->text("skeleton", "forms_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "forms_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "forms_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "forms_page_heading"));
         
-        $form = new SKELETON_CLASS_Form("skeleton_form");
+        $form = new OWAPI_CLASS_Form("skeleton_form");
         $form->setMethod(Form::METHOD_POST);
         $form->setEnctype(Form::ENCTYPE_MULTYPART_FORMDATA);
         

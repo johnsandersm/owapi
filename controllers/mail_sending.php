@@ -1,13 +1,13 @@
 <?php
 
-class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_MailSending extends OWAPI_CLASS_ActionController
 {
     public function index()
     {
         $language = OW::getLanguage();
         
-        OW::getDocument()->setTitle($language->text("skeleton", "mail_sending_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "mail_sending_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "mail_sending_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "mail_sending_page_heading"));
 
         //Creating mail sending form
         $mailSendingExampleForm = new Form('MailSendingExampleForm');
@@ -15,7 +15,7 @@ class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
         $from = new TextField('from');
         //Set email validation for input field
         $from->addValidator(new EmailValidator());
-        $from->setLabel($language->text("skeleton", "from"));
+        $from->setLabel($language->text("owapi", "from"));
         $from->setHasInvitation(true);
         $from->setInvitation('youremail@example.com');
         $from->setRequired();
@@ -24,7 +24,7 @@ class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
 
         $to = new TextField('to');
         $to->addValidator(new EmailValidator());
-        $to->setLabel($language->text("skeleton", "to"));
+        $to->setLabel($language->text("owapi", "to"));
         $to->setHasInvitation(true);
         $to->setInvitation('recepientemail@example.com');
         $to->setRequired();
@@ -32,7 +32,7 @@ class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
         $mailSendingExampleForm->addElement($to);
 
         $subject = new TextField('subject');
-        $subject->setLabel($language->text("skeleton", "subject"));
+        $subject->setLabel($language->text("owapi", "subject"));
         $subject->setHasInvitation(true);
         $subject->setInvitation('enter email title');
         $subject->setRequired();
@@ -40,7 +40,7 @@ class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
         $mailSendingExampleForm->addElement($subject);
 
         $body = new Textarea('body');
-        $body->setLabel($language->text("skeleton", "body"));
+        $body->setLabel($language->text("owapi", "body"));
         $body->setHasInvitation(true);
         $body->setInvitation('enter email body');
         $body->setRequired();
@@ -50,13 +50,13 @@ class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
         $deliver = new RadioField('deliver');
         $deliverOptions = array('immediately'=>'Immediately', 'add_to_queue'=>'Add to Queue');
         $deliver->setOptions($deliverOptions);
-        $deliver->setLabel($language->text("skeleton", "deliver"));
+        $deliver->setLabel($language->text("owapi", "deliver"));
         $deliver->setRequired();
 
         $mailSendingExampleForm->addElement($deliver);
 
         $sendButton = new Submit('send');
-        $sendButton->setValue($language->text("skeleton", "send"));
+        $sendButton->setValue($language->text("owapi", "send"));
 
         $mailSendingExampleForm->addElement($sendButton);
 
@@ -85,14 +85,14 @@ class SKELETON_CTRL_MailSending extends SKELETON_CLASS_ActionController
                 case 'immediately':
 
                     OW::getMailer()->send($mail);
-                    OW::getFeedback()->info($language->text("skeleton", "your_message_was_sent_successfully"));
+                    OW::getFeedback()->info($language->text("owapi", "your_message_was_sent_successfully"));
                     $this->redirect();
 
                     break;
                 case 'add_to_queue':
 
                     OW::getMailer()->addToQueue($mail);
-                    OW::getFeedback()->info($language->text("skeleton", "email_will_be_sent_when_cron_runs"));
+                    OW::getFeedback()->info($language->text("owapi", "email_will_be_sent_when_cron_runs"));
                     $this->redirect();
 
                     break;

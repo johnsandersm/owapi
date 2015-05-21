@@ -1,14 +1,14 @@
 <?php
 
-class SKELETON_CTRL_ProfileQuestions extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_ProfileQuestions extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "profile_questions_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "profile_questions_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "profile_questions_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "profile_questions_page_heading"));
 
         $questionData = BOL_QuestionService::getInstance()->getQuestionData(array( OW::getUser()->getId() ), array( 'username', 'sex', 'birthdate' ));
 
@@ -55,7 +55,7 @@ class SKELETON_CTRL_ProfileQuestions extends SKELETON_CLASS_ActionController
         $this->addForm($profileQuestionsForm);
 
         $saveButton = new Submit('save');
-        $saveButton->setValue($language->text('skeleton', 'save'));
+        $saveButton->setValue($language->text('owapi', 'save'));
 
         $profileQuestionsForm->addElement($saveButton);
 

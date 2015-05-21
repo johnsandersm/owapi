@@ -1,6 +1,6 @@
 <?php
 
-class SKELETON_CLASS_NotificationExampleForm extends Form
+class OWAPI_CLASS_NotificationExampleForm extends Form
 {
     public function __construct()
     {
@@ -10,22 +10,22 @@ class SKELETON_CLASS_NotificationExampleForm extends Form
 
         //Simple text field
         $content = new TextField("content");
-        $content->setLabel($language->text("skeleton", "notification_content"));
+        $content->setLabel($language->text("owapi", "notification_content"));
         $content->setHasInvitation(true);
-        $content->setInvitation($language->text("skeleton", "notification_content_invitation"));
+        $content->setInvitation($language->text("owapi", "notification_content_invitation"));
         $content->setRequired();
         
         $this->addElement($content);
 
         //File upload field
         $image = new ImageField("image");
-        $image->setLabel($language->text("skeleton", "notification_attach_image"));
+        $image->setLabel($language->text("owapi", "notification_attach_image"));
         $image->addValidator(new ImageValidator());
         $this->addElement($image);
 
         //Send button
         $send = new Submit("send");
-        $send->setValue($language->text("skeleton", "send"));
+        $send->setValue($language->text("owapi", "send"));
 
         //$this->setAjax();
         $this->setEnctype(Form::ENCTYPE_MULTYPART_FORMDATA);
@@ -43,7 +43,7 @@ class SKELETON_CLASS_NotificationExampleForm extends Form
         $userUrls = BOL_UserService::getInstance()->getUserUrlsForList(array($userId));
 
         $notificationParams = array(
-            'pluginKey' => 'skeleton',
+            'pluginKey' => 'owapi',
             'action' => 'example',
             'entityType' => 'skeleton-example',
             'entityId' => OW::getUser()->getId(),
@@ -72,7 +72,7 @@ class SKELETON_CLASS_NotificationExampleForm extends Form
             //get configured file storage (Cloud files or file system drive, depends on settings in config file)
             $storage = OW::getStorage();
 
-            $imagesDir = OW::getPluginManager()->getPlugin('skeleton')->getUserFilesDir();
+            $imagesDir = OW::getPluginManager()->getPlugin('owapi')->getUserFilesDir();
             $imagePath = $imagesDir . $_FILES['image']['name'];
 
             if ( $storage->fileExists($imagePath) )
@@ -80,7 +80,7 @@ class SKELETON_CLASS_NotificationExampleForm extends Form
                 $storage->removeFile($imagePath);
             }
 
-            $pluginfilesDir = Ow::getPluginManager()->getPlugin('skeleton')->getPluginFilesDir();
+            $pluginfilesDir = Ow::getPluginManager()->getPlugin('owapi')->getPluginFilesDir();
             $tmpImgPath = $pluginfilesDir . 'notification_' .uniqid() . '.jpg';
 
             $image = new UTIL_Image($_FILES['image']['tmp_name']);
@@ -93,7 +93,7 @@ class SKELETON_CLASS_NotificationExampleForm extends Form
 
             unlink($tmpImgPath);
 
-            $imagesUrl = OW::getPluginManager()->getPlugin('skeleton')->getUserFilesUrl();
+            $imagesUrl = OW::getPluginManager()->getPlugin('owapi')->getUserFilesUrl();
 
             $notificationData['contentImage'] = $imagesUrl . $_FILES['image']['name'];
         }
@@ -103,7 +103,7 @@ class SKELETON_CLASS_NotificationExampleForm extends Form
         OW::getEventManager()->trigger($event);
         $this->reset();
 
-        OW::getFeedback()->info(OW::getLanguage()->text("skeleton", "notification_has_been_added"));
+        OW::getFeedback()->info(OW::getLanguage()->text("owapi", "notification_has_been_added"));
     }
 }
 
@@ -146,7 +146,7 @@ class ImageValidator extends OW_Validator
                 return false;
 
             case UTIL_File::validateImage($realName):
-                $this->setErrorMessage(OW::getLanguage()->text('skeleton', 'errors_image_invalid'));
+                $this->setErrorMessage(OW::getLanguage()->text('owapi', 'errors_image_invalid'));
                 return false;
         }
 

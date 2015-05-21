@@ -1,15 +1,15 @@
 <?php
 
-class SKELETON_CTRL_Ping extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Ping extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "ping_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "ping_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "ping_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "ping_page_heading"));
 
-        OW::getDocument()->addScript( OW::getPluginManager()->getPlugin('skeleton')->getStaticJsUrl().'ping.js' );
+        OW::getDocument()->addScript( OW::getPluginManager()->getPlugin('owapi')->getStaticJsUrl().'ping.js' );
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-class SKELETON_CLASS_ActionController extends OW_ActionController
+class OWAPI_CLASS_ActionController extends OW_ActionController
 {
     /**
     *
@@ -11,10 +11,10 @@ class SKELETON_CLASS_ActionController extends OW_ActionController
 
     public function init()
     {
-        $this->service = SKELETON_BOL_Service::getInstance();
-        OW::getDocument()->addStyleSheet( OW::getPluginManager()->getPlugin('skeleton')->getStaticCssUrl().'skeleton.css' );
+        $this->service = OWAPI_BOL_Service::getInstance();
+        OW::getDocument()->addStyleSheet( OW::getPluginManager()->getPlugin('owapi')->getStaticCssUrl().'skeleton.css' );
 
-        OW::getNavigation()->activateMenuItem('main', 'skeleton', 'main_menu_item');
+        OW::getNavigation()->activateMenuItem('main', 'owapi', 'main_menu_item');
 
         if (!OW::getUser()->isAuthenticated())
         {

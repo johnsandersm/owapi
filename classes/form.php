@@ -1,6 +1,6 @@
 <?php
 
-class SKELETON_CLASS_Form extends Form
+class OWAPI_CLASS_Form extends Form
 {
     public function __construct( $name ) 
     {
@@ -11,8 +11,8 @@ class SKELETON_CLASS_Form extends Form
         
         //Simple text field
         $textField = new TextField("text");
-        $textField->setLabel($language->text("skeleton", "forms_text_field_label"));
-        $textField->setDescription($language->text("skeleton", "forms_text_field_description"));
+        $textField->setLabel($language->text("owapi", "forms_text_field_label"));
+        $textField->setDescription($language->text("owapi", "forms_text_field_description"));
         $textField->setHasInvitation(true);
         $textField->setRequired();
         
@@ -20,9 +20,9 @@ class SKELETON_CLASS_Form extends Form
         
         //Extended text field
         $textareaField = new Textarea("extended_text");
-        $textareaField->setLabel($language->text("skeleton", "forms_textarea_field_label"));
+        $textareaField->setLabel($language->text("owapi", "forms_textarea_field_label"));
         $textareaField->setHasInvitation(true);
-        $textareaField->setInvitation($language->text("skeleton", "forms_textarea_field_invitation"));
+        $textareaField->setInvitation($language->text("owapi", "forms_textarea_field_invitation"));
         $textareaValidator = new StringValidator(1, 200);
         $textareaField->addValidator($textareaValidator);
         
@@ -30,7 +30,7 @@ class SKELETON_CLASS_Form extends Form
         
         //Selectbox field
         $selectField = new Selectbox("selectbox");
-        $selectField->setLabel($language->text("skeleton", "forms_selectbox_field_label"));
+        $selectField->setLabel($language->text("owapi", "forms_selectbox_field_label"));
         $selectField->setInvitation('Select any');
 
         $selectField->setOptions(array(
@@ -42,7 +42,7 @@ class SKELETON_CLASS_Form extends Form
         
         //Multiple choice field
         $multiChoiceField = new CheckboxGroup("multichoice");
-        $multiChoiceField->setLabel($language->text("skeleton", "forms_multichoice_field_label"));
+        $multiChoiceField->setLabel($language->text("owapi", "forms_multichoice_field_label"));
         $multiChoiceField->setOptions(array(
             "1" => "New York",
             "2" => "Boston",
@@ -60,7 +60,7 @@ class SKELETON_CLASS_Form extends Form
 
         //File upload field
         $uploadField = new FileField("file");
-        $uploadField->setLabel($language->text("skeleton", "forms_file_field_label"));
+        $uploadField->setLabel($language->text("owapi", "forms_file_field_label"));
         $this->addElement($uploadField);
 
         //Hidden Field
@@ -71,7 +71,7 @@ class SKELETON_CLASS_Form extends Form
 
         //Submit field
         $submit = new Submit("submit");
-        $submit->setLabel($language->text("skeleton", "forms_submit_field_label"));
+        $submit->setLabel($language->text("owapi", "forms_submit_field_label"));
         
         $this->addElement($submit);
     }

@@ -3,39 +3,53 @@
 /**
  * Defined routes for plugin Skeleton
  */
-OW::getRouter()->addRoute(new OW_Route('skeleton-index', 'skeleton', 'SKELETON_CTRL_Example', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-localization', 'skeleton/localization', 'SKELETON_CTRL_Localization', 'index'));
-OW::getRouter()->addRoute(new OW_Route('skeleton-localization-delete-key', 'skeleton/localization/delete/:key', 'SKELETON_CTRL_Localization', 'deleteKey'));
+//OW::getRouter()->addRoute(new OW_Route('oxwallapi-auth-checklogin',   'oxwallapi/user/checklogin',   'OWAPI_CTRL_Oxwallapi', 'auth'));
+//OW::getRouter()->addRoute(new OW_Route('oxwallapi-auth-beforesignin', 'oxwallapi/user/beforesignin', 'OWAPI_CTRL_Oxwallapi', 'auth'));
+//OW::getRouter()->addRoute(new OW_Route('oxwallapi-auth-signin',       'oxwallapi/user/signin',       'OWAPI_CTRL_Oxwallapi', 'auth'));
+//$eventHandler = new OWAPI_CLASS_EventHandler();
+//$eventHandler->init();
+OW::getRouter()->addRoute(new OW_Route('oxwallapi-auth-checklogin',   'oxwallapi/user/checklogin',   'OWAPI_CTRL_Oxwallapi', 'index'));
+OW::getRouter()->addRoute(new OW_Route('oxwallapi-auth-beforesignin', 'oxwallapi/user/beforesignin', 'OWAPI_CTRL_Oxwallapi', 'index'));
+OW::getRouter()->addRoute(new OW_Route('oxwallapi-auth-signin',       'oxwallapi/user/signin',       'OWAPI_CTRL_Oxwallapi', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-routing', 'skeleton/routing', 'SKELETON_CTRL_Routing', 'index'));
+OW::getRouter()->addRoute(new OW_Route('oxwallapi-index', 'oxwallapi', 'OWAPI_CTRL_Oxwallapi', 'index'));
+OW::getRouter()->addRoute(new OW_Route('oxwallapi-index-1', 'oxwallapi/:par1', 'OWAPI_CTRL_Oxwallapi', 'index'));
+OW::getRouter()->addRoute(new OW_Route('oxwallapi-index-1-2', 'oxwallapi/:par1/:par2', 'OWAPI_CTRL_Oxwallapi', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-forms', 'skeleton/forms', 'SKELETON_CTRL_Forms', 'index'));
+OW::getRouter()->addRoute(new OW_Route('owapi-index', 'owapi', 'OWAPI_CTRL_Example', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-database', 'skeleton/database', 'SKELETON_CTRL_Database', 'index'));
-OW::getRouter()->addRoute(new OW_Route('skeleton-database-delete-item', 'skeleton/database/delete/:id', 'SKELETON_CTRL_Database', 'deleteItem'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-localization', 'skeleton/localization', 'OWAPI_CTRL_Localization', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-localization-delete-key', 'skeleton/localization/delete/:key', 'OWAPI_CTRL_Localization', 'deleteKey'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-file-storage', 'skeleton/file-storage/', 'SKELETON_CTRL_FileStorage', 'index'));
-OW::getRouter()->addRoute(new OW_Route('skeleton-file-storage-preview', 'skeleton/file-storage/preview', 'SKELETON_CTRL_FileStorage', 'preview'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-routing', 'skeleton/routing', 'OWAPI_CTRL_Routing', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-mail-sending', 'skeleton/mail-sending', 'SKELETON_CTRL_MailSending', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-forms', 'skeleton/forms', 'OWAPI_CTRL_Forms', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-notifications', 'skeleton/notifications', 'SKELETON_CTRL_Notifications', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-database', 'skeleton/database', 'OWAPI_CTRL_Database', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-database-delete-item', 'skeleton/database/delete/:id', 'OWAPI_CTRL_Database', 'deleteItem'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-newsfeed', 'skeleton/newsfeed', 'SKELETON_CTRL_Newsfeed', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-file-storage', 'skeleton/file-storage/', 'OWAPI_CTRL_FileStorage', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-file-storage-preview', 'skeleton/file-storage/preview', 'OWAPI_CTRL_FileStorage', 'preview'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-floatbox', 'skeleton/floatbox', 'SKELETON_CTRL_Floatbox', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-mail-sending', 'skeleton/mail-sending', 'OWAPI_CTRL_MailSending', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-widgets', 'skeleton/widgets', 'SKELETON_CTRL_Widgets', 'index'));
-OW::getRouter()->addRoute(new OW_Route('skeleton-widgets-delete', 'skeleton/widgets/delete/:id', 'SKELETON_CTRL_Widgets', 'delete'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-notifications', 'skeleton/notifications', 'OWAPI_CTRL_Notifications', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-profile_questions', 'skeleton/profile_questions', 'SKELETON_CTRL_ProfileQuestions', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-newsfeed', 'skeleton/newsfeed', 'OWAPI_CTRL_Newsfeed', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-access_level', 'skeleton/access_level', 'SKELETON_CTRL_AccessLevel', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-floatbox', 'skeleton/floatbox', 'OWAPI_CTRL_Floatbox', 'index'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-cron', 'skeleton/cron', 'SKELETON_CTRL_Example', 'cron'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-widgets', 'skeleton/widgets', 'OWAPI_CTRL_Widgets', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-widgets-delete', 'skeleton/widgets/delete/:id', 'OWAPI_CTRL_Widgets', 'delete'));
 
-OW::getRouter()->addRoute(new OW_Route('skeleton-ping', 'skeleton/ping', 'SKELETON_CTRL_Ping', 'index'));
+OW::getRouter()->addRoute(new OW_Route('skeleton-profile_questions', 'skeleton/profile_questions', 'OWAPI_CTRL_ProfileQuestions', 'index'));
+
+OW::getRouter()->addRoute(new OW_Route('skeleton-access_level', 'skeleton/access_level', 'OWAPI_CTRL_AccessLevel', 'index'));
+
+OW::getRouter()->addRoute(new OW_Route('skeleton-cron', 'skeleton/cron', 'OWAPI_CTRL_Example', 'cron'));
+
+OW::getRouter()->addRoute(new OW_Route('skeleton-ping', 'skeleton/ping', 'OWAPI_CTRL_Ping', 'index'));
 
 
 
@@ -46,12 +60,12 @@ OW::getRouter()->addRoute(new OW_Route('skeleton-ping', 'skeleton/ping', 'SKELET
  */
 function skeleton_on_notify_actions( BASE_CLASS_EventCollector $e )
 {
-    $sectionLabel = OW::getLanguage()->text('skeleton', 'notification_section_label');
+    $sectionLabel = OW::getLanguage()->text('owapi', 'notification_section_label');
 
     $e->add(array(
-        'section' => 'skeleton',
+        'section' => 'owapi',
         'action' => 'example',
-        'description' => OW::getLanguage()->text('skeleton', 'email_notifications_setting_example'),
+        'description' => OW::getLanguage()->text('owapi', 'email_notifications_setting_example'),
         'selected' => true,
         'sectionLabel' => $sectionLabel,
         'sectionIcon' => 'ow_ic_clock'
@@ -78,7 +92,7 @@ OW::getEventManager()->bind('notifications.collect_actions', 'skeleton_on_notify
 //        $avatar = $avatars[$userId];
 //
 //        $event->add(array(
-//            'pluginKey' => 'skeleton',
+//            'pluginKey' => 'owapi',
 //            'entityType' => 'skeleton-example',
 //            'entityId' => $userId,
 //            'userId' => $userId,
@@ -87,7 +101,7 @@ OW::getEventManager()->bind('notifications.collect_actions', 'skeleton_on_notify
 //
 //            'data' => array(
 //                'avatar' => $avatar,
-//                'string' => OW::getLanguage()->text('skeleton', 'notify_example', array(
+//                'string' => OW::getLanguage()->text('owapi', 'notify_example', array(
 //                    'content' => 'qwerty')
 //                )
 //            )

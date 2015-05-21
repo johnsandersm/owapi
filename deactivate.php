@@ -1,3 +1,3 @@
 <?php
 
-OW::getNavigation()->deleteMenuItem('skeleton', 'main_menu_item');
+OW::getNavigation()->deleteMenuItem('owapi', 'main_menu_item');

@@ -1,16 +1,16 @@
 <?php
 
-class SKELETON_CTRL_Notifications extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Notifications extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
         
-        OW::getDocument()->setTitle($language->text("skeleton", "notifications_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "notifications_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "notifications_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "notifications_page_heading"));
 
-        $notificationExampleForm = new SKELETON_CLASS_NotificationExampleForm();
+        $notificationExampleForm = new OWAPI_CLASS_NotificationExampleForm();
 
         $this->addForm($notificationExampleForm);
 

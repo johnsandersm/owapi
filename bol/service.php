@@ -1,6 +1,6 @@
 <?php
 
-class SKELETON_BOL_Service
+class OWAPI_BOL_Service
 {
     /**
      * Class instance
@@ -32,7 +32,7 @@ class SKELETON_BOL_Service
     
     private function __construct()
     {
-        $this->recordDao = SKELETON_BOL_RecordDao::getInstance();
+        $this->recordDao = OWAPI_BOL_RecordDao::getInstance();
     }
     
     /**
@@ -44,7 +44,7 @@ class SKELETON_BOL_Service
      */
     public function addRecord( $text, $extendedText, $choise )
     {
-        $record = new SKELETON_BOL_Record;
+        $record = new OWAPI_BOL_Record;
         $record->text = $text;
         $record->extendedText = $extendedText;
         $record->choice = $choise;

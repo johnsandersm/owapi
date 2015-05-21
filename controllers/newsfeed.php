@@ -1,26 +1,26 @@
 <?php
 
-class SKELETON_CTRL_Newsfeed extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Newsfeed extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "newsfeed_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "newsfeed_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "newsfeed_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "newsfeed_page_heading"));
 
         $newsfeedForm = new Form('NewsfeedExampleForm');
         $newsfeedForm->setEnctype(Form::ENCTYPE_MULTYPART_FORMDATA);
 
         $content = new TextField('content');
-        $content->setLabel($language->text('skeleton', 'item_content'));
+        $content->setLabel($language->text('owapi', 'item_content'));
         $content->setRequired();
 
         $newsfeedForm->addElement($content);
 
         $place = new Selectbox('place');
-        $place->setLabel($language->text('skeleton', 'place_on'));
+        $place->setLabel($language->text('owapi', 'place_on'));
 
         $options = array(
             '4'=>'Dashboard Newsfeed', //NEWSFEED_BOL_Service::VISIBILITY_AUTHOR
@@ -33,7 +33,7 @@ class SKELETON_CTRL_Newsfeed extends SKELETON_CLASS_ActionController
         $newsfeedForm->addElement($place);
 
         $submitButton = new Submit('submit');
-        $submitButton->setValue($language->text('skeleton', 'submit_entity'));
+        $submitButton->setValue($language->text('owapi', 'submit_entity'));
 
         $newsfeedForm->addElement($submitButton);
 
@@ -58,7 +58,7 @@ class SKELETON_CTRL_Newsfeed extends SKELETON_CLASS_ActionController
             );
 
             $event = new OW_Event('feed.action', array(
-                'pluginKey' => 'skeleton',
+                'pluginKey' => 'owapi',
                 'entityType' => 'skeleton_entity',
                 'entityId' => OW::getUser()->getId(),
                 'userId' => OW::getUser()->getId(),

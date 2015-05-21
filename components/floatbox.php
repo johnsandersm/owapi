@@ -1,6 +1,6 @@
 <?php
 
-class SKELETON_CMP_Floatbox extends OW_Component
+class OWAPI_CMP_Floatbox extends OW_Component
 {
     public function __construct($reload)
     {
@@ -19,7 +19,7 @@ class SKELETON_CMP_Floatbox extends OW_Component
 
         $js = '$("#reload_button").click(function(){
 
-                OW.loadComponent("SKELETON_CMP_Floatbox", {reload: true},
+                OW.loadComponent("OWAPI_CMP_Floatbox", {reload: true},
                     {
                       onReady: function( html ){
                          $("#skeleton_floatbox_content").empty().html(html);

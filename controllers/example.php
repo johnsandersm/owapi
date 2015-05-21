@@ -1,6 +1,6 @@
 <?php
 
-class SKELETON_CTRL_Example extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Example extends OWAPI_CLASS_ActionController
 {
 
     public function index()
@@ -8,100 +8,100 @@ class SKELETON_CTRL_Example extends SKELETON_CLASS_ActionController
         $language = OW::getLanguage();
         $router = OW::getRouter();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "index_page_title"));
-        OW::getDocument()->setDescription($language->text("skeleton", "index_page_description"));
-        OW::getDocument()->setHeading($language->text("skeleton", "index_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "index_page_title"));
+        OW::getDocument()->setDescription($language->text("owapi", "index_page_description"));
+        OW::getDocument()->setHeading($language->text("owapi", "index_page_heading"));
         
         $skeletonMenu = array();
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_file_structure"),
-            "url" => $router->urlFor("SKELETON_CTRL_Example", "fileStructure")
+            "label" => $language->text("owapi", "menu_item_file_structure"),
+            "url" => $router->urlFor("OWAPI_CTRL_Example", "fileStructure")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_devtools"),
-            "url" => $router->urlFor("SKELETON_CTRL_Example", "devtools")
+            "label" => $language->text("owapi", "menu_item_devtools"),
+            "url" => $router->urlFor("OWAPI_CTRL_Example", "devtools")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_pluginxml"),
-            "url" => $router->urlFor("SKELETON_CTRL_Example", "pluginxml")
+            "label" => $language->text("owapi", "menu_item_pluginxml"),
+            "url" => $router->urlFor("OWAPI_CTRL_Example", "pluginxml")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_routing"),
+            "label" => $language->text("owapi", "menu_item_routing"),
             "url" => $router->urlForRoute("skeleton-routing")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_localization"),
+            "label" => $language->text("owapi", "menu_item_localization"),
             "url" => $router->urlForRoute("skeleton-localization")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_forms"),
+            "label" => $language->text("owapi", "menu_item_forms"),
             "url" => $router->urlForRoute("skeleton-forms")
         );
         
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_database"),
+            "label" => $language->text("owapi", "menu_item_database"),
             "url" => $router->urlForRoute("skeleton-database")
         );
         
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_file_storage"),
+            "label" => $language->text("owapi", "menu_item_file_storage"),
             "url" => $router->urlForRoute("skeleton-file-storage")
         );
         
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_mail_sending"),
+            "label" => $language->text("owapi", "menu_item_mail_sending"),
             "url" => $router->urlForRoute("skeleton-mail-sending")
         );
         
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_notifications"),
+            "label" => $language->text("owapi", "menu_item_notifications"),
             "url" => $router->urlForRoute("skeleton-notifications")
         );
         
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_newsfeed"),
+            "label" => $language->text("owapi", "menu_item_newsfeed"),
             "url" => $router->urlForRoute("skeleton-newsfeed")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_floatbox"),
+            "label" => $language->text("owapi", "menu_item_floatbox"),
             "url" => $router->urlForRoute("skeleton-floatbox")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_widgets"),
+            "label" => $language->text("owapi", "menu_item_widgets"),
             "url" => $router->urlForRoute("skeleton-widgets")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_access_level"),
+            "label" => $language->text("owapi", "menu_item_access_level"),
             "url" => $router->urlForRoute("skeleton-access_level")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_profile_questions"),
+            "label" => $language->text("owapi", "menu_item_profile_questions"),
             "url" => $router->urlForRoute("skeleton-profile_questions")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_cron"),
+            "label" => $language->text("owapi", "menu_item_cron"),
             "url" => $router->urlForRoute("skeleton-cron")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_ping"),
+            "label" => $language->text("owapi", "menu_item_ping"),
             "url" => $router->urlForRoute("skeleton-ping")
         );
 
         $skeletonMenu[] = array(
-            "label" => $language->text("skeleton", "menu_item_install"),
-            "url" =>  $router->urlFor("SKELETON_CTRL_Example", "install")
+            "label" => $language->text("owapi", "menu_item_install"),
+            "url" =>  $router->urlFor("OWAPI_CTRL_Example", "install")
         );
 
         $this->assign("menu", $skeletonMenu);
@@ -111,8 +111,8 @@ class SKELETON_CTRL_Example extends SKELETON_CLASS_ActionController
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "devtools_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "devtools_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "devtools_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "devtools_page_heading"));
 
         $this->assign('devtoolsUrl', OW_URL_HOME.'admin/dev-tools/languages');
     }
@@ -121,27 +121,27 @@ class SKELETON_CTRL_Example extends SKELETON_CLASS_ActionController
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "pluginxml_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "pluginxml_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "pluginxml_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "pluginxml_page_heading"));
     }
 
     public function fileStructure()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "file_structure_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "file_structure_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "file_structure_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "file_structure_page_heading"));
 
-        $this->assign('pluginxmlUrl', OW::getRouter()->urlFor("SKELETON_CTRL_Example", "pluginxml"));
-        $this->assign('cronUrl', OW::getRouter()->urlFor("SKELETON_CTRL_Example", "cron"));
+        $this->assign('pluginxmlUrl', OW::getRouter()->urlFor("OWAPI_CTRL_Example", "pluginxml"));
+        $this->assign('cronUrl', OW::getRouter()->urlFor("OWAPI_CTRL_Example", "cron"));
     }
 
     public function cron()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "cron_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "cron_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "cron_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "cron_page_heading"));
 
     }
 
@@ -149,8 +149,8 @@ class SKELETON_CTRL_Example extends SKELETON_CLASS_ActionController
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "install_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "install_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "install_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "install_page_heading"));
 
     }
 

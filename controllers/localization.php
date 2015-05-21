@@ -1,18 +1,18 @@
 <?php
 
-class SKELETON_CTRL_Localization extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Localization extends OWAPI_CLASS_ActionController
 {
     public function index()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "localization_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "localization_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "localization_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "localization_page_heading"));
 
         $localizationExampleForm = new Form('LocalizationExampleForm');
 
         $key = new TextField('key');
-        $key->setLabel($language->text("skeleton", "enter_text_key"));
+        $key->setLabel($language->text("owapi", "enter_text_key"));
         $key->setHasInvitation(true);
         $key->setInvitation('hello_world');
         $key->setRequired();
@@ -20,7 +20,7 @@ class SKELETON_CTRL_Localization extends SKELETON_CLASS_ActionController
         $localizationExampleForm->addElement($key);
 
         $value = new TextField('value');
-        $value->setLabel($language->text("skeleton", "enter_original_value"));
+        $value->setLabel($language->text("owapi", "enter_original_value"));
         $value->setHasInvitation(true);
         $value->setInvitation('Welcome to my site');
         $value->setRequired();
@@ -28,17 +28,17 @@ class SKELETON_CTRL_Localization extends SKELETON_CLASS_ActionController
         $localizationExampleForm->addElement($value);
 
         $createButton = new Submit('create');
-        $createButton->setValue($language->text("skeleton", "create"));
+        $createButton->setValue($language->text("owapi", "create"));
 
         $localizationExampleForm->addElement($createButton);
 
         //Assigning form to the controller action
         $this->addForm($localizationExampleForm);
 
-        //Getting keys and values for prefix "skeleton"
+        //Getting keys and values for prefix "owapi"
         $languageService = BOL_LanguageService::getInstance();
 
-        $keys = $languageService->findLastKeyList(0, 10, 'skeleton');
+        $keys = $languageService->findLastKeyList(0, 10, 'owapi');
 
         foreach($keys as $id => $key)
         {
@@ -56,7 +56,7 @@ class SKELETON_CTRL_Localization extends SKELETON_CLASS_ActionController
             $key = strtolower($key);
 
 
-            $keyDto = $languageService->findKey('skeleton', $key);
+            $keyDto = $languageService->findKey('owapi', $key);
             if ( !empty($keyDto) )
             {
                 OW::getFeedback()->warning($language->text("admin", "msg_dublicate_key"));
@@ -64,8 +64,8 @@ class SKELETON_CTRL_Localization extends SKELETON_CLASS_ActionController
             else
             {
                 $currentLanguageId = $languageService->getCurrent()->getId();
-                $languageService->addValue($currentLanguageId, 'skeleton', $key, $data['value'], true);
-                OW::getFeedback()->info($language->text("skeleton", "msg_key_added"));
+                $languageService->addValue($currentLanguageId, 'owapi', $key, $data['value'], true);
+                OW::getFeedback()->info($language->text("owapi", "msg_key_added"));
                 $this->redirect();
             }
         }
@@ -75,12 +75,12 @@ class SKELETON_CTRL_Localization extends SKELETON_CLASS_ActionController
     public function deleteKey($params)
     {
         $languageService = BOL_LanguageService::getInstance();
-        $keyDto = $languageService->findKey('skeleton', $params['key']);
+        $keyDto = $languageService->findKey('owapi', $params['key']);
 
         if (!empty($keyDto))
         {
             $languageService->deleteKey($keyDto->getId());
-            OW::getFeedback()->info(OW::getLanguage()->text("skeleton", "msg_key_deleted"));
+            OW::getFeedback()->info(OW::getLanguage()->text("owapi", "msg_key_deleted"));
         }
 
         $this->redirect( OW::getRouter()->urlForRoute('skeleton-localization') );

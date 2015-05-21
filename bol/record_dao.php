@@ -6,7 +6,7 @@
  * @package ow.plugin.skeleton.bol
  * @since 1.0
  */
-class SKELETON_BOL_RecordDao extends OW_BaseDao
+class OWAPI_BOL_RecordDao extends OW_BaseDao
 {
 
     /**
@@ -37,7 +37,7 @@ class SKELETON_BOL_RecordDao extends OW_BaseDao
      */
     public function getDtoClassName()
     {
-        return 'SKELETON_BOL_Record';
+        return 'OWAPI_BOL_Record';
     }
 
     /**

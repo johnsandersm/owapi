@@ -6,7 +6,7 @@
  * @package ow.plugin.skeleton.bol
  * @since 1.0
  */
-class SKELETON_BOL_Record extends OW_Entity
+class OWAPI_BOL_Record extends OW_Entity
 {
     /**
      *

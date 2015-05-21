@@ -1,7 +1,7 @@
 <?php
 
 
-class SKELETON_Cron extends OW_Cron
+class OWAPI_Cron extends OW_Cron
 {
     public function __construct()
     {
@@ -23,7 +23,7 @@ class SKELETON_Cron extends OW_Cron
 
     public function clearUploadedFiles()
     {
-        $fileNameList = OW::getStorage()->getFileNameList(OW::getPluginManager()->getPlugin('skeleton')->getUserFilesDir(), 'file_storage_');
+        $fileNameList = OW::getStorage()->getFileNameList(OW::getPluginManager()->getPlugin('owapi')->getUserFilesDir(), 'file_storage_');
         foreach($fileNameList as $filename)
         {
             OW::getStorage()->removeFile($filename);

@@ -1,14 +1,14 @@
 <?php
 
-class SKELETON_CTRL_Widgets extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_Widgets extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "widgets_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "widgets_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "widgets_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "widgets_page_heading"));
 
         //$component = new BASE_CMP_UserListWidget();
         //$this->addComponent('component', $component);
@@ -16,7 +16,7 @@ class SKELETON_CTRL_Widgets extends SKELETON_CLASS_ActionController
         $widgetExampleForm = new Form('WidgetExampleForm');
 
         $place = new Selectbox('place');
-        $place->setLabel($language->text('skeleton', 'place_widget_on_page'));
+        $place->setLabel($language->text('owapi', 'place_widget_on_page'));
 
         $options = array(
             BOL_ComponentAdminService::PLACE_PROFILE => 'User Profile',
@@ -29,7 +29,7 @@ class SKELETON_CTRL_Widgets extends SKELETON_CLASS_ActionController
         $widgetExampleForm->addElement($place);
 
         $section = new Selectbox('section');
-        $section->setLabel($language->text('skeleton', 'place_widget_in_section'));
+        $section->setLabel($language->text('owapi', 'place_widget_in_section'));
 
         $options = array(
             BOL_ComponentAdminService::SECTION_LEFT => 'Left',
@@ -45,7 +45,7 @@ class SKELETON_CTRL_Widgets extends SKELETON_CLASS_ActionController
 
 
         $addButton = new Submit('add');
-        $addButton->setValue(OW::getLanguage()->text('skeleton', 'add'));
+        $addButton->setValue(OW::getLanguage()->text('owapi', 'add'));
         $widgetExampleForm->addElement($addButton);
 
         $this->addForm($widgetExampleForm);

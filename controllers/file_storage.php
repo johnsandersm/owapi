@@ -1,33 +1,33 @@
 <?php
 
-class SKELETON_CTRL_FileStorage extends SKELETON_CLASS_ActionController
+class OWAPI_CTRL_FileStorage extends OWAPI_CLASS_ActionController
 {
 
     public function index()
     {
         $language = OW::getLanguage();
 
-        OW::getDocument()->setTitle($language->text("skeleton", "file_storage_page_title"));
-        OW::getDocument()->setHeading($language->text("skeleton", "file_storage_page_heading"));
+        OW::getDocument()->setTitle($language->text("owapi", "file_storage_page_title"));
+        OW::getDocument()->setHeading($language->text("owapi", "file_storage_page_heading"));
 
         //Creating image upload form
         $fileStorageForm = new Form('FileStorageExampleForm');
         $fileStorageForm->setEnctype(Form::ENCTYPE_MULTYPART_FORMDATA);
 
         $image = new FileField('image');
-        $image->setLabel($language->text('skeleton', 'upload_image'));
+        $image->setLabel($language->text('owapi', 'upload_image'));
 
         $fileStorageForm->addElement($image);
 
         $description = new Textarea('description');
-        $description->setLabel($language->text('skeleton', 'short_description'));
+        $description->setLabel($language->text('owapi', 'short_description'));
         $description->setHasInvitation(true);
-        $description->setInvitation($language->text('skeleton', 'describe_your_image'));
+        $description->setInvitation($language->text('owapi', 'describe_your_image'));
 
         $fileStorageForm->addElement($description);
 
         $submitButton = new Submit('submit');
-        $submitButton->setValue($language->text('skeleton', 'submit_image'));
+        $submitButton->setValue($language->text('owapi', 'submit_image'));
 
         $fileStorageForm->addElement($submitButton);
 
@@ -58,7 +58,7 @@ class SKELETON_CTRL_FileStorage extends SKELETON_CLASS_ActionController
                 //get configured file storage (Cloud files or file system drive, depends on settings in config file)
                 $storage = OW::getStorage();
 
-                $imagesDir = OW::getPluginManager()->getPlugin('skeleton')->getUserFilesDir();
+                $imagesDir = OW::getPluginManager()->getPlugin('owapi')->getUserFilesDir();
                 $imageName = 'file_storage_'.md5($_FILES['image']['name']).'.jpg';
                 $imagePath = $imagesDir . $imageName;
 
@@ -67,7 +67,7 @@ class SKELETON_CTRL_FileStorage extends SKELETON_CLASS_ActionController
                     $storage->removeFile($imagePath);
                 }
 
-                $pluginfilesDir = Ow::getPluginManager()->getPlugin('skeleton')->getPluginFilesDir();
+                $pluginfilesDir = Ow::getPluginManager()->getPlugin('owapi')->getPluginFilesDir();
                 $tmpImgPath = $pluginfilesDir . 'file_storage_' .uniqid() . '.jpg';
 
                 $image = new UTIL_Image($_FILES['image']['tmp_name']);
@@ -80,7 +80,7 @@ class SKELETON_CTRL_FileStorage extends SKELETON_CLASS_ActionController
 
                 unlink($tmpImgPath);
 
-                $imagesUrl = OW::getPluginManager()->getPlugin('skeleton')->getUserFilesUrl();
+                $imagesUrl = OW::getPluginManager()->getPlugin('owapi')->getUserFilesUrl();
 
                 $this->assign('description', $data['description']);
                 $this->assign('imageUrl', $imagesUrl . $imageName);
