@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <plugin>
-    <name>Plugin Skeleton</name>
-    <key>skeleton</key>
-    <description>This plugin is for developers who want to create Oxwall plugins. Contains a set of working examples of the various pieces of Oxwall functionality.</description>
-    <author>Oxwall Foundation</author>
-    <authorEmail>plugins@oxwall.org</authorEmail>
-    <authorUrl>http://www.oxwall.org/foundation</authorUrl>
-    <developerKey>e547ebcf734341ec11911209d93a1054</developerKey>
-    <build>8710</build>
-    <copyright>(C) 2009 Oxwall Foundation. All rights reserved.</copyright>
-    <license>The BSD License</license>
-    <licenseUrl>http://www.opensource.org/licenses/bsd-license.php</licenseUrl>
+    <name>Sample API</name>
+    <key>owapi</key>
+    <description>Sample API plugin for Oxwall.</description>
+    <author>John Sanders</author>
+    <authorEmail>john.sanders.ios@yandex.ru</authorEmail>
+    <authorUrl>http://ow.johnsanders.pw/</authorUrl>
+    <developerKey>c682d1ed22089244fd17af707a4c199e</developerKey>
+    <build>0001</build>
+    <copyright>(C) 2015 Sanders Inc. All rights reserved.</copyright>
+    <license>The GNU General Public License, v2</license>
+    <licenseUrl>http://opensource.org/licenses/gpl-2.0.php</licenseUrl>
 </plugin>
